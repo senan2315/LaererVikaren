@@ -1,0 +1,56 @@
+@startuml BPMN Lærervikaren
+
+title LærerVikaren – Overordnet proces (BPMN-lignende Activity)
+
+skinparam shadowing false
+
+|Folkeskolen|
+start
+:Message | Bestil vikar (telefon);
+stop
+
+|LærerVikaren (Gunbritt)|
+start
+:Modtag bestilling;
+:Find vikar (kompetencer + tilgængelighed);
+if (Vikar fundet?) then (Ja)
+  :Message | Kontakt vikar;
+  if (Vikar accepterer?) then (Ja)
+    :Message | Send skoleinfo til vikar;
+    :Message | Send bekræftelse til skole;
+  else (Nej)
+    :Find anden vikar;
+    :Message | Kontakt vikar;
+  endif
+else (Nej)
+  :Message | Informér skole: ingen vikar;
+  stop
+endif
+stop
+
+|Vikar|
+start
+:Modtag skoleinfo;
+:Udfør vikariat på skolen;
+:Message | Indmeld arbejdstid;
+stop
+
+|LærerVikaren (Administration)|
+start
+:Registrér arbejdstid + historik;
+:Klargør fakturagrundlag (43 kr/time);
+stop
+
+|LærerVikaren (Anton)|
+start
+:Rekruttér ny vikar;
+:Indhent børneattest (CPR);
+:Registrér udløbsdato (fornyes hvert halve år);
+stop
+
+|Vikar|
+start
+:Indmeld tilgængelighed (dato + tidsrum);
+:Message | Opdatér tilgængelighed;
+stop
+@enduml
