@@ -1,0 +1,12 @@
+@startuml - Use Case Model for Lærervikaren
+
+@startsalt Use Case Model for Lærervikaren
+{#
+  **Use Case # ** | **Use Case Navn**
+  UC1 | Book vikar
+  UC2 | Registrer arbejdstid
+  UC3 | Slet vikar
+}
+@endsalt
+@enduml
+

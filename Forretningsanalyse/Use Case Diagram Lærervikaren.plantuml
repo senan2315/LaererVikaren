@@ -1,0 +1,18 @@
+@startuml - Use Case Diagram for Lærervikaren
+left to right direction
+actor "Medarbejder" as m
+actor "Vikar" as v
+actor "Administrator" as a
+rectangle Lærervikaren {
+  usecase "Book vikar" as UC1
+  usecase "Registrer arbejdstid" as UC2
+  usecase "Slet vikar" as UC3
+}
+m --> UC1
+m --> UC2
+v --> UC2
+a --> UC1
+a --> UC2
+a --> UC3
+
+@enduml
