@@ -5,7 +5,7 @@ title LærerVikaren BPMN Diagram
 start
 :Message | Bestil vikar (telefon);
 
-|LærerVikaren (Gunbritt)|
+|LærerVikaren (Medarbejder)|
 -[dashed]->
 :Modtag bestilling;
 :Find vikar (kompetencer + tilgængelighed);
@@ -18,28 +18,24 @@ if (Vikar fundet?) then (Ja)
     :Find anden vikar;
     :Message | Kontakt vikar;
   endif
+  -[dashed]->
 else (Nej)
   :Message | Informér skole: ingen vikar;
   stop
 endif
 
 |Vikar|
--[dashed]->
 :Modtag skoleinfo;
 :Udfør vikariat på skolen;
 :Message | Indmeld arbejdstid;
 
 |LærerVikaren (Administration)|
+-[dashed]->
 :Registrér arbejdstid + historik;
-:Klargør fakturagrundlag (43 kr/time);
-
-|LærerVikaren (Anton)|
-:Rekruttér ny vikar;
-:Indhent børneattest (CPR);
-:Registrér udløbsdato (fornyes hvert halve år);
+:Klargør fakturagrundlag (43 kr/time); 
 
 |Vikar|
 :Indmeld tilgængelighed (dato + tidsrum);
 :Message | Opdatér tilgængelighed;
-
+stop
 @enduml
