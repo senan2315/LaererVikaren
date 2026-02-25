@@ -1,0 +1,57 @@
+@startuml FML Lærervikaren
+
+class Nøglepartnere {
+    Skoler
+    Vikarer
+    Gunbritt
+    Anton
+
+}
+
+class Nøgleaktiviteter {
+    Booke vikarer til skolerne
+    Lave vagtplaner for vikarerne
+    Holde styr på vikarenes kalender 
+}
+
+class Nøgleressourcer {
+    Vikarernes kompetencer
+    Vikarernes tilgængelighed
+    Vikarenes kontaktinformation
+}
+
+class Værditilbud {
+    Hjælper skolerne med at finde vikarer, 
+    når deres faste lærere er syge eller har brug for fri.
+}
+
+class Kunderelationer {
+    Har en tæt og personlig relation til både skolerne og vikarerne, 
+    da vi ofte er i kontakt med dem for at finde den rette vikar til hver skole.
+}
+
+class Kanaler {
+    Kommunikerer med skolerne og vikarerne 
+    via telefon, e-mail og vores online booking system.
+}
+
+class Kundesegmenter {
+    Skolerne, der har brug for vikarer
+    Vikarerne, der ønsker at arbejde som vikarer
+}
+
+class Omkostningsstruktur {
+    Løn til vikarerne
+    Markedsføring og reklame for at tiltrække vikarer og skoler
+    Vedligeholdelse af online booking system
+}
+
+class Indtægtsstrømme {
+    Skolerne betaler for at booke vikarer gennem vores service
+}
+
+
+hide method
+hide circle
+
+@enduml

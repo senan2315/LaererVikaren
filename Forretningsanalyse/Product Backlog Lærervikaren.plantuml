@@ -1,0 +1,12 @@
+@startuml Product Backlog for Lærervikaren
+
+@startsalt PBL for Lærervikaren
+{#
+  **PBL ** 
+  UC1:  Book vikar
+  UC2:  Registrer arbejdstid
+  UC3:  Slet vikar
+}
+@endsalt
+
+@enduml

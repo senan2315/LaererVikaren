@@ -1,0 +1,41 @@
+@startuml LærerVikaren BPMN Diagram
+title LærerVikaren BPMN Diagram
+
+|Folkeskolen|
+start
+:Message | Bestil vikar (telefon);
+
+|LærerVikaren (Medarbejder)|
+-[dashed]->
+:Modtag bestilling;
+:Find vikar (kompetencer + tilgængelighed);
+if (Vikar fundet?) then (Ja)
+  :Message | Kontakt vikar;
+  if (Vikar accepterer?) then (Ja)
+    :Message | Send skoleinfo til vikar;
+    :Message | Send bekræftelse til skole;
+  else (Nej)
+    :Find anden vikar;
+    :Message | Kontakt vikar;
+  endif
+  -[dashed]->
+else (Nej)
+  :Message | Informér skole: ingen vikar;
+  stop
+endif
+
+|Vikar|
+:Modtag skoleinfo;
+:Udfør vikariat på skolen;
+:Message | Indmeld arbejdstid;
+
+|LærerVikaren (Administration)|
+-[dashed]->
+:Registrér arbejdstid + historik;
+:Klargør fakturagrundlag (43 kr/time); 
+
+|Vikar|
+:Indmeld tilgængelighed (dato + tidsrum);
+:Message | Opdatér tilgængelighed;
+stop
+@enduml

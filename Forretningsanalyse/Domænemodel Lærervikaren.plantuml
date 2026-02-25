@@ -1,0 +1,38 @@
+@startuml - Domænemodel for Lærervikaren
+
+class "Vikar" {
+    navn
+    telefon
+    fag
+    tilgængelighed
+    børneattest
+}
+
+class "Medarbejder" {
+    navn
+    telefon
+
+}
+
+class "Skoler" {
+    navn
+    adresse
+    telefon
+    fag
+}
+
+class "Kalender" {
+    dato
+    tid
+    vikar
+    skole
+}
+
+Kalender "1" -- "0..1" Vikar
+Kalender "1" -- "0..1" Skoler
+Medarbejder "1" -- "0..1" Kalender
+Medarbejder "1" -- "0..*" Skoler
+
+hide circle
+hide method
+@enduml
