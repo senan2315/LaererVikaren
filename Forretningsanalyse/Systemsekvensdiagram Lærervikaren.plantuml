@@ -1,0 +1,16 @@
+@startuml SSD
+title Book Vikar
+
+Actor ": Gunbritt" as Gunbritt
+participant ": System" as System
+
+Gunbritt -> System: vælgInformationsoversigt
+System --> Gunbritt: Systemet viser informationsoversigt
+System --> Gunbritt: Systemet finder ledige og kvalificerede vikarer
+Gunbritt -> System: vælgLedigVikar(Vikar)
+System --> Gunbritt: Systemet sender en bekræftelse til vikar
+System --> Gunbritt: Systemet opdaterer status i systemet
+
+hide footbox
+
+@enduml
